@@ -23,7 +23,7 @@ open output/sample.pdf
 To have the output files automagically regenerated when you edit the source files:
 
 ```bash
-sudo apt install pandoc wkhtmltopdf ionotify-tools
+sudo apt install pandoc wkhtmltopdf inotify-tools
 make watch
 ```
 
@@ -31,8 +31,10 @@ make watch
 
 ```bash
 make docker
-open output/sample.pdf
 ```
+
+While the docker container is running, the `src/` and the `output/` directories are mounted to it and pdfs will be re-generated whenever the markdown files are edited.
+
 
 # Development
 

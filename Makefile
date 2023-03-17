@@ -1,5 +1,8 @@
 SHELL := /bin/bash
 
+export TIMESTAMP=$(shell date +"%s")
+export pwd=$(shell pwd)
+
 .PHONY: all
 all:
 	./compile_all.sh
@@ -27,3 +30,4 @@ clean:
 .PHONY: docker
 docker:
 	docker build -t markdown-resume .
+	docker run -it  --name "markdown-resume-${TIMESTAMP}" -v "${pwd}/src:/mdr/src" -v "${pwd}/output:/mdr/output" markdown-resume
