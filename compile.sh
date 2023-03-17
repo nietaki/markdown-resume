@@ -16,7 +16,8 @@ fi
 sourcefile="$1"
 format="$2"
 
-$(pandoc -s $sourcefile --template extract_style.bash)
+STYLE=$(pandoc -s "$sourcefile" --template extract_style.txt)
+
 
 if [ -z "$STYLE" ]; then
   echo "style not set in markdown front matter, using default" >&2
