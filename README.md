@@ -29,6 +29,8 @@ make watch
 
 ## Running with Docker
 
+If you have docker installed, you can run
+
 ```bash
 make docker
 ```
@@ -52,7 +54,7 @@ Contributions welcome! Especially new styles and tweaks to the default style.
 
 ## TODO
 - [x] list out prereqs for the script to work locally
-- [ ] dockerfile for local compilation
+- [x] dockerfile for local compilation
 - [x] CI with tests, compilation and output download
 - [ ] working style selection
 - [ ] multiple css files in a style (for vendored stuff)
