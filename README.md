@@ -6,7 +6,7 @@ Supports working with multiple markdown files at the same time (if, for example 
 
 Absolutely no dependencies if you use GitHub CI to build the resulting files!. Just put your resume markdown file under `src/`, commit and push. You'll find a zip file with the output files in the [CI workflow summary page](https://github.com/actions/upload-artifact#where-does-the-upload-go).
 
-You can use [src/sample.md](`src/sample.md`) for reference.
+You can use [`src/sample.md`](src/sample.md) for reference.
 
 ## Running locally
 
@@ -60,3 +60,4 @@ Contributions welcome! Especially new styles and tweaks to the default style.
 - [ ] multiple css files in a style (for vendored stuff)
 - [ ] fontAwesome icons in the default styles
 - [ ] default style tweaks (link colors?)
+- [ ] add sample output files to the repo and gitignore. Add a make task for them
