@@ -4,6 +4,10 @@ SHELL := /bin/bash
 all:
 	./compile_all.sh
 
+.PHONY: watch
+watch:
+	./watch.sh
+
 .PHONY:
 test:
 	shellcheck ./compile.sh
@@ -19,3 +23,7 @@ test:
 clean:
 	rm -f output/*.html
 	rm -f output/*.pdf
+
+.PHONY: docker
+docker:
+	docker build -t markdown-resume .
