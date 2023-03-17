@@ -15,7 +15,7 @@ You'll need to install `pandoc` and `wkhtmltopdf`. Afterwards just run `make`!
 on Linux:
 
 ```bash
-sudo apt install pandoc wkhtmltopdf
+sudo apt install pandoc lmodern wkhtmltopdf
 make
 open output/sample.pdf
 ```
@@ -23,7 +23,7 @@ open output/sample.pdf
 To have the output files automagically regenerated when you edit the source files:
 
 ```bash
-sudo apt install pandoc wkhtmltopdf inotify-tools
+sudo apt install pandoc lmodern wkhtmltopdf inotify-tools
 make watch
 ```
 
@@ -44,6 +44,10 @@ While the docker container is running, the `src/` and the `output/` directories 
 
 Contributions welcome! Especially new styles and tweaks to the default style.
 
+## Creating a new style
+
+Create a directory under `styles/` - the name of the directory will be the style name.
+Any css files put in the directory will be included, in alphabetical order, in a resume compiled with that style.
 
 ## Comming soon
 
@@ -57,7 +61,7 @@ Contributions welcome! Especially new styles and tweaks to the default style.
 - [x] dockerfile for local compilation
 - [x] CI with tests, compilation and output download
 - [ ] working style selection
-- [ ] multiple css files in a style (for vendored stuff)
+- [x] multiple css files in a style (for vendored stuff)
 - [ ] fontAwesome icons in the default styles
 - [ ] default style tweaks (link colors?)
 - [ ] add sample output files to the repo and gitignore. Add a make task for them

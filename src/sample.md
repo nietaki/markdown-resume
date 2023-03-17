@@ -1,8 +1,8 @@
 ---
 title: Curriculum Vitae - Jacek Królikowski
 
-margin-left: 2cm
-margin-right: 2cm
+margin-left: 1.5cm
+margin-right: 1.5cm
 margin-top: 2cm
 margin-bottom: 2cm
 papersize: a4
@@ -41,7 +41,7 @@ Cooling, power series, optics, alchemy, planetary motions, apples.
 
 ## Education
 
-#### 1654-1660 and some more here to check the fucking line height
+#### 1654-1660 and some more here to check the funny line height
 __The King's School, Grantham.__
  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ipsum sed ex rhoncus molestie. Ut sed quam eleifend dui pulvinar dictum. Quisque varius, quam et eleifend condimentum, quam nunc tristique sapien, at consectetur justo quam vitae odio. Pellentesque ut sapien non leo sodales mollis. Donec sed mollis nisi, quis pulvinar purus. Donec venenatis elementum ligula at sollicitudin. Fusce odio tellus, sollicitudin et nisl eu, ullamcorper ullamcorper purus. Maecenas ut quam feugiat odio tempus suscipit sed euismod ex.
 

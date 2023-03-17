@@ -18,4 +18,9 @@ format="$2"
 style="default"
 source_base=$(basename "$sourcefile" .md)
 
-pandoc -s --self-contained -t html -c "styles/$style/main.css"  "$sourcefile" -o "output/$source_base.$format" --pdf-engine-opt=--enable-local-file-access
+# shellcheck disable=SC2012
+styles=$(ls -p styles/${style}/*.css | sed "s/^/-c /" | tr "\n" " ")
+
+# we actually want the spaces to split out the args
+# shellcheck disable=SC2086
+pandoc -s --self-contained -t html $styles "$sourcefile" -o "output/$source_base.$format" --pdf-engine-opt=--enable-local-file-access
