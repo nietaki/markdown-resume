@@ -45,6 +45,12 @@ make docker
 
 While the docker container is running, the `src/` and the `output/` directories are mounted to it and pdfs will be re-generated whenever the markdown files are edited.
 
+## Credit
+
+- Markdown and css structure based on a Eliseo Papa's [markdown-cv](https://github.com/elipapa/markdown-cv) jekyll workflow
+- Default theme based on [Kamil Wójcicki](https://www.isca-speech.org/iscamember/resumes/10211_12071110395691cd.pdf)'s LaTex template I've been using for about 15 years
+- The trick for fetching front matter variables in bash from [u/cr0sh](https://www.reddit.com/r/pandoc/comments/f6oxm5/convert_yaml_frontmatter_to_bash_variables/?utm_source=share&utm_medium=web2x&context=3)
+
 # Development
 
 ## Contributing
@@ -67,10 +73,10 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [x] list out prereqs for the script to work locally
 - [x] dockerfile for local compilation
 - [x] CI with tests, compilation and output download
-- [ ] working style selection
+- [x] working style selection
 - [x] multiple css files in a style (for vendored stuff)
 - [ ] fontAwesome icons in the default styles
 - [ ] default style tweaks (link colors?)
 - [ ] add sample output files to the repo and gitignore. Add a make task for them
-- [ ] credit the projects that inspired this one
+- [x] credit the projects that inspired this one
 - [ ] add pdf metadata using exiftool?
