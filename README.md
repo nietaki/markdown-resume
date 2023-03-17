@@ -76,7 +76,7 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [x] working style selection
 - [x] multiple css files in a style (for vendored stuff)
 - [ ] fontAwesome icons in the default styles
-- [ ] default style tweaks (link colors?)
+- [x] default style tweaks (link colors?)
 - [ ] add sample output files to the repo and gitignore. Add a make task for them
 - [x] credit the projects that inspired this one
 - [ ] add pdf metadata using exiftool?
