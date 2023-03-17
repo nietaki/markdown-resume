@@ -17,6 +17,5 @@ sourcefile="$1"
 format="$2"
 style="default"
 source_base=$(basename "$sourcefile" .md)
-echo "$source_base"
 
 pandoc -s --self-contained -t html -c "styles/$style/main.css"  "$sourcefile" -o "output/$source_base.$format" --pdf-engine-opt=--enable-local-file-access

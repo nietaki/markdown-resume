@@ -1,11 +1,5 @@
 ---
 title: Curriculum Vitae - Jacek Królikowski
-author-meta:
-- 'The Author'
-date-meta:
-- '1. Juni, 2020'
-keywords:
-- 'keyword1;keyword2;keyword3'
 
 margin-left: 2cm
 margin-right: 2cm
