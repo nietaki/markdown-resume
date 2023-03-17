@@ -1,12 +1,18 @@
 # markdown-resume
 
-A tool that uses [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown) to generate a good looking CV in .pdf and .html formats from a vanilla markdown file. 
+A tool that uses [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown) to generate a good looking CV in .pdf and .html formats from a vanilla markdown file.
 
 Supports working with multiple markdown files at the same time (if, for example you need them in multiple languages), and doesn't depend on jekyll nor latex.
 
 Absolutely no dependencies if you use GitHub CI to build the resulting files!. Just put your resume markdown file under `src/`, commit and push. You'll find a zip file with the output files in the [CI workflow summary page](https://github.com/actions/upload-artifact#where-does-the-upload-go).
 
-You can use [`src/sample.md`](src/sample.md) for reference.
+## CV file structure
+
+You can use [`src/sample.md`](src/sample.md) for reference. Most of it should be self-explanatory. Other than that:
+
+- The `title` variable from the frontmatter gets set as the first `h1` in the content
+- The `style` variable in the front matter chooses the style to use (from the [`styles/`](styles/) directory)
+- Some markdown elements might have a special function in a given style (like the `h4` used for time periods in the default style). Again, consult the samples to see how it fits together.
 
 ## Running locally
 
@@ -27,6 +33,8 @@ sudo apt install pandoc lmodern wkhtmltopdf inotify-tools
 make watch
 ```
 
+The latter is Linux only, to use the same workflow on Mac, use the Docker workflow.
+
 ## Running with Docker
 
 If you have docker installed, you can run
@@ -36,7 +44,6 @@ make docker
 ```
 
 While the docker container is running, the `src/` and the `output/` directories are mounted to it and pdfs will be re-generated whenever the markdown files are edited.
-
 
 # Development
 
@@ -55,8 +62,8 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - styles consisting of multiple .css files
 - FontAwesome icons in the default style
 
-
 ## TODO
+
 - [x] list out prereqs for the script to work locally
 - [x] dockerfile for local compilation
 - [x] CI with tests, compilation and output download
@@ -65,3 +72,5 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [ ] fontAwesome icons in the default styles
 - [ ] default style tweaks (link colors?)
 - [ ] add sample output files to the repo and gitignore. Add a make task for them
+- [ ] credit the projects that inspired this one
+- [ ] add pdf metadata using exiftool?

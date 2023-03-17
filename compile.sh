@@ -15,11 +15,26 @@ fi
 
 sourcefile="$1"
 format="$2"
-style="default"
+
+$(pandoc -s $sourcefile --template extract_style.bash)
+
+if [ -z "$STYLE" ]; then
+  echo "style not set in markdown front matter, using default" >&2
+  STYLE=default
+fi
+
+if [ ! -d "styles/$STYLE" ]; then
+  echo "style '$STYLE' doesn't exist, using default" >&2
+  STYLE=default
+else 
+  echo "using '$STYLE' style" >&2
+fi
+
+
 source_base=$(basename "$sourcefile" .md)
 
 # shellcheck disable=SC2012
-styles=$(ls -p styles/${style}/*.css | sed "s/^/-c /" | tr "\n" " ")
+styles=$(ls -p styles/${STYLE}/*.css | sed "s/^/-c /" | tr "\n" " ")
 
 # we actually want the spaces to split out the args
 # shellcheck disable=SC2086
