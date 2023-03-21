@@ -2,7 +2,7 @@
 title: Curriculum Vitae - Isaac Newton
 
 margin-left: 1.5cm
-margin-right: 1.5cm
+margin-right: 1.8cm
 margin-top: 2cm
 margin-bottom: 1.5cm
 papersize: a4
