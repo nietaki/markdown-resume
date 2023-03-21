@@ -31,3 +31,10 @@ clean:
 docker:
 	docker build -t markdown-resume .
 	docker run -it  --name "markdown-resume-${TIMESTAMP}" -v "${pwd}/src:/mdr/src" -v "${pwd}/output:/mdr/output" markdown-resume
+
+# a convenience tool for overwriting the example CV built from nietaki's private source
+.PHONY: nietaki
+nietaki: CV_Jacek_Krolikowski_en.pdf
+
+CV_Jacek_Krolikowski_en.pdf: output/CV_Jacek_Krolikowski_en.pdf
+	cp -f output/CV_Jacek_Krolikowski_en.pdf .

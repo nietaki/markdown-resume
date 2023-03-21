@@ -2,6 +2,8 @@
 
 A tool that uses [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown) to generate a good looking CV in .pdf and .html formats from a vanilla markdown file.
 
+You can see a real-world CV built with the tool [**HERE**](CV_Jacek_Krolikowski_en.pdf).
+
 Supports working with multiple markdown files at the same time (if, for example, you need your CV in multiple languages), and doesn't depend on jekyll nor LaTeX.
 
 Absolutely no dependencies if you use GitHub CI to build the resulting files!. Just put your resume markdown file under `src/`, commit and push. You'll find a zip file with the output files in the [CI workflow summary page](https://github.com/actions/upload-artifact#where-does-the-upload-go).
@@ -53,24 +55,18 @@ While the docker container is running, the `src/` and the `output/` directories 
 - Default theme based on [Kamil Wójcicki](https://www.isca-speech.org/iscamember/resumes/10211_12071110395691cd.pdf)'s LaTex template I've been using for about 15 years
 - The trick for fetching front matter variables in bash from [u/cr0sh](https://www.reddit.com/r/pandoc/comments/f6oxm5/convert_yaml_frontmatter_to_bash_variables/?utm_source=share&utm_medium=web2x&context=3)
 
-# Development
+## Development
 
-## Contributing
+### Contributing
 
 Contributions welcome! Especially new styles and tweaks to the default style.
 
-## Creating a new style
+### Creating a new style
 
 Create a directory under `styles/` - the name of the directory will be the style name.
 Any css files put in the directory will be included, in alphabetical order, in a resume compiled with that style.
 
-## Coming soon
-
-- multiple styles
-- styles consisting of multiple .css files
-- FontAwesome icons in the default style
-
-## TODO
+### TODO
 
 - [x] list out prereqs for the script to work locally
 - [x] dockerfile for local compilation
@@ -82,3 +78,17 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [x] add sample input / output files to the repo and gitignore
 - [x] credit the projects that inspired this one
 - [ ] add pdf metadata using exiftool?
+
+## FAQ
+
+### Why did you put [a pdf with your resume](CV_Jacek_Krolikowski_en.pdf) in the root directory?
+
+It's the reason I created the project and I wanted to share the end result I was aiming for :)
+
+Also, I'm available for contract work! If you have a project you think I could help you with, get in touch via the email in the [resume](CV_Jacek_Krolikowski_en.pdf), I'd love to hear from you.
+
+### Why is there a hidden `.Makefile` in the root directory?
+
+I left it as a reminder to never try to use hand-written Makefiles for anything non-trivial - it's not worth it.
+
+
