@@ -114,17 +114,7 @@ ol,
 ul {
   list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -136,83 +126,37 @@ body {
   font: normal normal 400;
   font-size: 14pt;
   line-height: 1.3em;
-  /*also written as...  font: normal normal 400 100%/1.5em;*/
   /* font-family: Verdana,sans-serif; */
   font-family: Latin Modern Roman, Latin Modern Math, serif;
-  /*margin-top: 1em;
-  margin-left: 1em;*/
 }
 
-p {
-  position: relative;
-  left: 25%;
-  margin-bottom: 0.3em;
-  margin-right: 0;
-  width: 75%;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-code {
-  /* font: normal normal; */
-  font-weight: lighter;
-  letter-spacing: 0px;
-  font-size: 100%;
-  /*line-height: 1em;*/
-}
-
-p code {
-  position: absolute;
-  left: -12%;
-}
-
-/* copied from code */
-h4 {
-  /* font: normal normal; */
-  top: 1px;
-  /* font-weight: lighter; */
-  font-weight: bold;
-  letter-spacing: 0px;
-  /* font-size: 90%; */
-  /* line-height: calc(1.3em / 0.9); */
-  /* color: #999; */
-  position: relative;
-  width: 20%;
-  left: 80%;
-  height: 0px;
-  text-align: right;
-}
 
 ul {
   position: relative;
   left: 28%;
   width: 65%;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   /*margin-top: -0.5em;*/
 }
 
-/*uncomment to get dashes in the list*/
-/*li:before {
+li:before {
   content: "-";
   position: relative;
   left: -0.25em;
-}*/
+}
 
 li {
-  /*second line indent*/
   padding-left: 1.25em;
   text-indent: -1.25em;
-  /*color: #777;*/
 }
 
 li ul {
   position: relative;
   left: 0;
   width: 100%;
-  margin-top: 0.25em;
+  /* margin-top: 0.25em; */
 }
 
-/* h1,h2,h3,h4 { */
 h1,
 h2,
 h3 {
@@ -227,10 +171,97 @@ h1 {
   line-height: 1em;
   position: relative;
   left: 0%;
-  margin-top: 2em;
+  /* margin-top: 2em; */
 }
 
-/* TODO h3 fixes when after a paragraph */
+
+h2 {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #482009;
+  margin-top: 12pt;
+  position: relative;
+  text-align: left;
+  width: 23%;
+
+  height: 0px;
+  top: 0em;
+}
+
+h2 + h3 {
+  margin-top: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+  /* color: #653a1a; */
+  color: #AD7549;
+  position: relative;
+  height: 0px;
+  text-align: left;
+  width: 21%;
+  left: 2%;
+  margin-top: 10pt;
+}
+
+p,h4 {
+  position: relative;
+  left: 25%;
+  margin-bottom: 7pt;
+  margin-right: 0;
+  width: 75%;
+  text-align: justify;
+  text-justify: inter-word;
+  clear: both;
+}
+
+h4 {
+  font-weight: bold;
+  margin-top: 10pt;
+  text-align: left;
+}
+
+/* copied from code */
+h4 code {
+  /* font-weight: normal; */
+  font-weight: bold;
+  color: #424242;
+  letter-spacing: 0px;
+  font-size: 90%;
+  line-height: calc(1.3em / 0.9);
+  margin-bottom: inherit;
+  position: relative;
+  text-align: right;
+  float: right;
+  clear: none;
+  right: 0px;
+  margin-left: 10px;
+}
+
+h2 + h4,
+h3 + h4{
+  margin-top: 0px;
+}
+
+blockquote {
+  border-left: 3px solid #0C0604;
+  padding-left: 10px;
+  position: relative;
+  left: 28%;
+  width: 65%;
+  margin-bottom: 10px;
+  /* quotes: none; */
+  font-style: italic;
+}
+
+blockquote p {
+  left: 0%;
+  width: 100%;
+}
+
+/* blockquote:before { */
+/*   content: open-quote; */
+/* } */
 
 hr {
   margin-top: 1em;
@@ -241,42 +272,6 @@ header + hr {
   margin-top: 0.2em;
 }
 
-/* unused with the hr */
-h1 + p {
-  /*subtitle*/
-  font-style: italic;
-  font-size: 110%;
-}
-
-h2 {
-  font-size: 1.1em;
-  /* color: #800; */
-  /* color: #221d1a; */
-  color: #482009;
-  margin-top: 1.5em;
-  position: relative;
-  /* top: 1.2em; */
-  text-align: left;
-  /* text-align: right; */
-  width: 20%;
-
-  top: 0em;
-  height: 0px;
-}
-
-h3 {
-  font-size: 1em;
-  /* color: #653a1a; */
-  color: #AD7549;
-  position: relative;
-  height: 0px;
-  text-align: left;
-  width: 20%;
-}
-
-h2 + h3 {
-  margin-top: 1.5em;
-}
 
 a {
   color: inherit;
@@ -293,22 +288,8 @@ a:hover {
   color: #0e1131;
 }
 
-#webaddress {
-  margin-top: 1em;
-  position: relative;
-  left: 28%;
-  color: #ccc;
-  font-family: Menlo, monospace, sans-serif;
-  font-size: 80%;
-}
-
-#webaddress a {
-  text-decoration: none;
-}
-
 em {
-  font-style: normal;
-  color: #2d4e5e;
+  font-style: italic;
 }
 
 strong {

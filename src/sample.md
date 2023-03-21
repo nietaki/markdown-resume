@@ -1,114 +1,88 @@
 ---
-title: Curriculum Vitae - Jacek Królikowski
+title: Curriculum Vitae - Isaac Newton
 
-margin-left: 2cm
-margin-right: 2cm
+margin-left: 1.5cm
+margin-right: 1.5cm
 margin-top: 2cm
-margin-bottom: 2cm
+margin-bottom: 1.5cm
 papersize: a4
 
 style: default
 ---
 
+<hr />
 
-***
+## Contact information
 
-## Personal information
-
-Jacek Królikowski\
-<https://github.com/nietaki/>\
-<nietaki@gmail.com>\
-+44 754 232 4731
-
-
-Physicist, Mathematician, Cambridge professor.
+Isaac Newton\
+<isaac@applesdofall.org>\
+<http://en.wikipedia.org/wiki/Isaac_Newton>\
+[+44 (0)33 0058 0058](tel:+443300580058)
 
 ## Currently
 
-Standing on the shoulders of giants
-Standing on the shoulders of giants
-Standing on the shoulders of giants
-Standing on the shoulders of giants
+Standing on the shoulders of giants. Favourite quotes:
 
-### Work experience
+> What we know is a drop, what we don't know is an ocean.
+>
+> To any action there is always an opposite and equal reaction; in other words, the actions of two bodies upon each other are always equal and always opposite in direction.
+
+### Specialized in
 
 Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
 
+### Research interests
 
-### Other activities
+Interested in the following topics:
 
-Cooling, power series, optics, alchemy, planetary motions, apples.
-
+- cooling
+- power series
+- optics
+- alchemy
+- planetary motions
+- apples:
+  - granny smith
+  - McIntosh
 
 ## Education
 
-#### 1654-1660 and some more here to check the funny line height
-__The King's School, Grantham.__
+#### Fellow at Trinity College, Cambridge `1661-death`
 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in ipsum sed ex rhoncus molestie. Ut sed quam eleifend dui pulvinar dictum. Quisque varius, quam et eleifend condimentum, quam nunc tristique sapien, at consectetur justo quam vitae odio. Pellentesque ut sapien non leo sodales mollis. Donec sed mollis nisi, quis pulvinar purus. Donec venenatis elementum ligula at sollicitudin. Fusce odio tellus, sollicitudin et nisl eu, ullamcorper ullamcorper purus. Maecenas ut quam feugiat odio tempus suscipit sed euismod ex.
+#### Sizar at Trinity College, Cambridge `1661-1667`
 
-Vivamus at purus a erat aliquam feugiat id ac lectus. Etiam ut lorem dignissim, vehicula dolor pulvinar, ultricies mauris. In odio urna, scelerisque eu sodales non, rutrum sed quam. Morbi semper nibh eu nibh luctus accumsan. Praesent ac ante quis velit bibendum scelerisque. Praesent quis orci quis erat ultrices varius. Proin dui orci, auctor vel posuere in, auctor vel lectus. Vestibulum auctor eros id risus auctor, nec pellentesque odio tincidunt. Sed ultrices turpis a ante faucibus, eget laoreet nisi semper. Suspendisse nec varius libero. Curabitur lobortis nisi risus. Donec tincidunt nisi ante, vel volutpat quam facilisis a. Pellentesque placerat sodales felis in pulvinar. Quisque pulvinar hendrerit euismod. Etiam interdum nibh urna, eget sagittis orci dapibus sit amet. Ut aliquet sapien non tellus mollis, ac ultrices nulla accumsan.
+In 1665, discovered the generalised binomial theorem and began to develop a mathematical theory that later became calculus. Obtained BA degree at Cambridge in August 1665, after which the university temporarily closed as a precaution against the Great Plague.
 
-Morbi eu sem mi. Aliquam convallis nunc vitae volutpat tincidunt. Integer ac aliquet mi. Maecenas vulputate placerat volutpat. Quisque sagittis vel mauris et ornare. Maecenas vel justo velit. Maecenas quis augue congue, placerat sapien in, fringilla dui. Aliquam quis posuere lorem. Sed porttitor velit id laoreet varius. Donec gravida sed sem sit amet lacinia. In laoreet sed ante venenatis commodo. In consectetur congue nibh, ac eleifend ex tristique nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+#### The King's School, Grantham `1654-1660`
 
-#### June 1661 - now
+Learned, Latin, Ancient Greek and a significant foundation of mathematics.
 
-__Trinity College, Cambridge__
-
-- Sizar
-
-#### 1667 - death
-
-__Trinity College, Cambridge__
-
-- Fellow
-
-
+Motivated partly by a desire for revenge against a schoolyard bully, became the top-ranked student, distinguishing himself mainly by building sundials and models of windmills.
 
 ## Awards
 
-`2012`
-President, *Royal Society*, London, UK
+President, _Royal Society_, London, UK
 
-Associate, *French Academy of Science*, Paris, France
+Associate, _French Academy of Science_, Paris, France
 
-
-
-## Tech experience
+## Publications
 
 <!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
 
-### Languages
+### Journals
 
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
+**1669** Newton Sir I, _De analysi per æquationes numero terminorum infinitas_
 
-`1669`
-Lectiones opticæ.
-
-etc. etc. etc.
+**1669** _Lectiones opticæ_
 
 ### Patents
 
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
-
+**2012** Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
 
 ## Occupation
 
-`1600`
-__Royal Mint__, London
+#### Royal Mint, London `1600`
 
 - Warden
 - Minted coins
 
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
-
-
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
-
-
+#### Lucasian professor of Mathematics, Cambridge University `1600`

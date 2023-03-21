@@ -2,21 +2,23 @@
 
 A tool that uses [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown) to generate a good looking CV in .pdf and .html formats from a vanilla markdown file.
 
-Supports working with multiple markdown files at the same time (if, for example you need them in multiple languages), and doesn't depend on jekyll nor latex.
+Supports working with multiple markdown files at the same time (if, for example, you need your CV in multiple languages), and doesn't depend on jekyll nor LaTeX.
 
 Absolutely no dependencies if you use GitHub CI to build the resulting files!. Just put your resume markdown file under `src/`, commit and push. You'll find a zip file with the output files in the [CI workflow summary page](https://github.com/actions/upload-artifact#where-does-the-upload-go).
 
-## CV file structure
+## Usage
 
-You can use [`src/sample.md`](src/sample.md) for reference. Most of it should be self-explanatory. Other than that:
+Create a markdown file under [`src/`](src/) - on build it will be used to generate the corresponding .pdf and .html files under [`output/`](output/)
+
+You can use [`src/sample.md`](src/sample.md) for reference and [`output/sample.pdf`](output/sample.pdf) to see what it generates. Most of it should be self-explanatory. Other than that:
 
 - The `title` variable from the frontmatter gets set as the first `h1` in the content
 - The `style` variable in the front matter chooses the style to use (from the [`styles/`](styles/) directory)
-- Some markdown elements might have a special function in a given style (like the `h4` used for time periods in the default style). Again, consult the samples to see how it fits together.
+- Some markdown elements might have a special function in a given style (like the `h4` -> `code` used for time periods in the default style). Again, consult the samples to see how it fits together.
 
 ## Running locally
 
-You'll need to install `pandoc` and `wkhtmltopdf`. Afterwards just run `make`!
+You'll need to install `pandoc` and `wkhtmltopdf`, optionally `lmodern` to use the default font. Afterwards just run `make`!
 
 on Linux:
 
@@ -26,14 +28,14 @@ make
 open output/sample.pdf
 ```
 
-To have the output files automagically regenerated when you edit the source files:
+To have the output files automatically regenerated when you edit the source files:
 
 ```bash
 sudo apt install pandoc lmodern wkhtmltopdf inotify-tools
 make watch
 ```
 
-The latter is Linux only, to use the same workflow on Mac, use the Docker workflow.
+The latter is Linux only, to use the same workflow on Mac, use the Docker workflow below.
 
 ## Running with Docker
 
@@ -62,7 +64,7 @@ Contributions welcome! Especially new styles and tweaks to the default style.
 Create a directory under `styles/` - the name of the directory will be the style name.
 Any css files put in the directory will be included, in alphabetical order, in a resume compiled with that style.
 
-## Comming soon
+## Coming soon
 
 - multiple styles
 - styles consisting of multiple .css files
@@ -77,6 +79,6 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [x] multiple css files in a style (for vendored stuff)
 - [ ] fontAwesome icons in the default styles
 - [x] default style tweaks (link colors?)
-- [ ] add sample output files to the repo and gitignore. Add a make task for them
+- [x] add sample input / output files to the repo and gitignore
 - [x] credit the projects that inspired this one
 - [ ] add pdf metadata using exiftool?
