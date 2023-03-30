@@ -34,7 +34,5 @@ docker:
 
 # a convenience tool for overwriting the example CV built from nietaki's private source
 .PHONY: nietaki
-nietaki: CV_Jacek_Krolikowski_en.pdf
-
-CV_Jacek_Krolikowski_en.pdf: output/CV_Jacek_Krolikowski_en.pdf
+nietaki:
 	cp -f output/CV_Jacek_Krolikowski_en.pdf .
