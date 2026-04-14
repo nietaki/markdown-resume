@@ -21,7 +21,6 @@ test:
 	test -f ./output/sample.pdf || exit 1
 	test -f ./output/sample.html || exit 1
 	pdftotext ./output/sample.pdf - | grep "hidden text" || exit 1
-	pd
 	make clean
 	test ! -f ./output/sample.pdf || exit 1
 	test ! -f ./output/sample.html || exit 1
