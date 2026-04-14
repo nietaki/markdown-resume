@@ -17,6 +17,7 @@ watch:
 test:
 	shellcheck ./compile.sh
 	shellcheck ./compile_all.sh
+	shellcheck ./watch.sh
 	make
 	test -f ./output/sample.pdf || exit 1
 	test -f ./output/sample.html || exit 1

@@ -3,7 +3,7 @@
 # one time in case there are some modifications already
 ./compile_all.sh
 
-while read file
+while read -r file
 do
   echo "$file modified, rebuilding..."
   ./compile_all.sh >/dev/null 2>&1
