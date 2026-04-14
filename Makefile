@@ -2,6 +2,8 @@ SHELL := /bin/bash
 
 export TIMESTAMP=$(shell date +"%s")
 export pwd=$(shell pwd)
+export APP_VERSION=$(shell cat APP_VERSION.txt)
+export IMAGE_NAME=markdown-resume
 
 .PHONY: all
 all:
@@ -29,10 +31,16 @@ clean:
 
 .PHONY: docker
 docker:
-	docker build -t markdown-resume .
-	docker run -it  --name "markdown-resume-${TIMESTAMP}" -v "${pwd}/src:/mdr/src" -v "${pwd}/output:/mdr/output" markdown-resume
+	docker build --load -t $(IMAGE_NAME):tmp .
+	docker run -it --name "${IMAGE_NAME}-${TIMESTAMP}" -v "./src:/mdr/src" -v "./output:/mdr/output" $(IMAGE_NAME):tmp
 
-# a convenience tool for overwriting the example CV built from nietaki's private source
-.PHONY: nietaki
-nietaki:
-	cp -f output/CV_Jacek_Krolikowski_en.pdf .
+.PHONY: push-tag
+push-tag:
+	if [[ -n $$(git status --porcelain) ]]; then \
+		echo "There are uncommited changes. Please commit or stash them before pushing a tag."; \
+		exit 1; \
+	fi
+	git tag -a v$(APP_VERSION) -m "Release version $(APP_VERSION)"
+	git push origin v$(APP_VERSION)
+	awk -F. -v OFS=. '{$$NF++; print}' APP_VERSION.txt > APP_VERSION.txt.tmp && mv APP_VERSION.txt.tmp APP_VERSION.txt; \
+	echo "Version automatically bumped to: $$(cat APP_VERSION.txt)"

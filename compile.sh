@@ -27,7 +27,7 @@ fi
 if [ ! -d "styles/$STYLE" ]; then
   echo "style '$STYLE' doesn't exist, using default" >&2
   STYLE=default
-else 
+else
   echo "using '$STYLE' style" >&2
 fi
 
@@ -35,8 +35,8 @@ fi
 source_base=$(basename "$sourcefile" .md)
 
 # shellcheck disable=SC2012
-styles=$(ls -p styles/${STYLE}/*.css | sed "s/^/-c /" | tr "\n" " ")
+styles=$(ls -p styles/"${STYLE}"/*.css | sed "s/^/-c /" | tr "\n" " ")
 
 # we actually want the spaces to split out the args
 # shellcheck disable=SC2086
-pandoc -s --self-contained -t html $styles "$sourcefile" -o "output/$source_base.$format" --pdf-engine-opt=--enable-local-file-access
+pandoc -s --embed-resources --standalone -t html $styles "$sourcefile" -o "output/$source_base.$format" --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access

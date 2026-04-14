@@ -1,0 +1,146 @@
+# https://docs.docker.com/build/ci/github-actions/multi-platform/#distribute-build-across-multiple-runners
+name: main
+
+on:
+  push:
+
+env:
+  REGISTRY_IMAGE: nietaki/markdown-resume
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v5
+
+      - name: install required packages (the naive way)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends curl jq pandoc lmodern wkhtmltopdf
+        shell: bash
+      - run: make test
+      - run: make
+
+      - name: Run Shellcheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          ignore_paths: >-
+            lib
+            tests
+          check_together: 'yes'
+
+
+  build:
+    needs:
+      - test
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - platform: linux/amd64
+          runner: ubuntu-24.04
+        - platform: linux/arm64
+          runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Prepare
+        run: |
+          platform=${{ matrix.platform }}
+          echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY_IMAGE }}
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build and push by digest
+        id: build
+        uses: docker/build-push-action@v7
+        with:
+          platforms: ${{ matrix.platform }}
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ env.REGISTRY_IMAGE }}
+          outputs: type=image,push-by-digest=true,name-canonical=true,push=true
+
+      - name: Export digest
+        run: |
+          mkdir -p ${{ runner.temp }}/digests
+          digest="${{ steps.build.outputs.digest }}"
+          touch "${{ runner.temp }}/digests/${digest#sha256:}"
+
+      - name: Upload digest
+        uses: actions/upload-artifact@v4
+        with:
+          name: digests-${{ env.PLATFORM_PAIR }}
+          path: ${{ runner.temp }}/digests/*
+          if-no-files-found: error
+          retention-days: 1
+
+  merge:
+    runs-on: ubuntu-24.04
+    needs:
+      - build
+    steps:
+      - name: Download digests
+        uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/digests
+          pattern: digests-*
+          merge-multiple: true
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.REGISTRY_IMAGE }}
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+
+      - name: Create manifest list and push
+        working-directory: ${{ runner.temp }}/digests
+        run: |
+          docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
+            $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
+
+      - name: Inspect image
+        run: |
+          docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ steps.meta.outputs.version }}
+
+  update-description:
+    runs-on: ubuntu-24.04
+    needs: merge
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Upload README.md as DockerHub description
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          short-description: ${{ github.event.repository.description }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: nietaki/markdown-resume
+          readme-filepath: ./README.md

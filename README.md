@@ -49,6 +49,8 @@ make docker
 
 While the docker container is running, the `src/` and the `output/` directories are mounted to it and pdfs will be re-generated whenever the markdown files are edited.
 
+Note: the watching for changes doesn't seem to be working on MacOS (at least when using Podman)
+
 ## Credit
 
 - Markdown and css structure based on a Eliseo Papa's [markdown-cv](https://github.com/elipapa/markdown-cv) jekyll workflow
