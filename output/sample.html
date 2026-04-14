@@ -297,10 +297,23 @@ font-size: 1pt;
 line-height: 1pt;
 position: relative;
 left: 23%;
+top: -9px;
 margin-bottom: 0;
 margin-right: 0;
 width: 77%;
 clear: both;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+pre.hidden::selection {
+background: transparent;
+}
+pre.hidden::-moz-selection {
+background: transparent;
 }
 pre.hidden code {
 border: none;
@@ -332,7 +345,6 @@ and always opposite in direction.</p>
 <p>Interested in the following topics:</p>
 <ul>
 <li>cooling</li>
-<li>power series</li>
 <li>optics</li>
 <li>alchemy</li>
 <li>planetary motions</li>
@@ -374,10 +386,7 @@ patent 001</p>
 <h2 id="occupation">Occupation</h2>
 <h4 id="royal-mint-london-1600">Royal Mint, London
 <code>1600</code></h4>
-<ul>
-<li>Warden</li>
-<li>Minted coins</li>
-</ul>
+<p>Warden, Minted coins</p>
 <h4 id="lucasian-professor-of-mathematics-cambridge-university-1600">Lucasian
 professor of Mathematics, Cambridge University <code>1600</code></h4>
 <pre class="hidden"><code>This is hidden text, that will still be recognised when the document is read by a machine, like with `pdftotext`

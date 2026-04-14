@@ -3,7 +3,7 @@ title: Curriculum Vitae - Isaac Newton
 
 margin-left: 1.5cm
 margin-right: 1.8cm
-margin-top: 2cm
+margin-top: 1.8cm
 margin-bottom: 1.5cm
 papersize: a4
 
@@ -36,7 +36,6 @@ Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.w
 Interested in the following topics:
 
 - cooling
-- power series
 - optics
 - alchemy
 - planetary motions
@@ -82,8 +81,7 @@ Associate, _French Academy of Science_, Paris, France
 
 #### Royal Mint, London `1600`
 
-- Warden
-- Minted coins
+Warden, Minted coins
 
 #### Lucasian professor of Mathematics, Cambridge University `1600`
 
