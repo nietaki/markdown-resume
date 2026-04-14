@@ -35,6 +35,10 @@ docker:
 	docker build --load -t $(IMAGE_NAME):tmp .
 	docker run -it --name "${IMAGE_NAME}-${TIMESTAMP}" -v "./src:/mdr/src" -v "./output:/mdr/output" $(IMAGE_NAME):tmp
 
+.PHONY: docker-simple
+docker-simple:
+	docker run -it --entrypoint "./compile_all.sh" -v "./src:/mdr/src" -v "./output:/mdr/output" nietaki/markdown-resume:latest
+
 .PHONY: push-tag
 push-tag:
 	if [[ -n $$(git status --porcelain) ]]; then \

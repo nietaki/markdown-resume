@@ -51,6 +51,16 @@ While the docker container is running, the `src/` and the `output/` directories 
 
 Note: the watching for changes doesn't seem to be working on MacOS (at least when using Podman)
 
+## Simplest option
+
+In this version you don't compile the docker image - you use the `:latest`  pushed to [docker hub](https://hub.docker.com/repository/docker/nietaki/markdown-resume/tags/latest/)
+
+It also doesn't do the filesystem watch thing - it just compiles all the source files once.
+
+```bash
+make docker-simple
+```
+
 ## Credit
 
 - Markdown and css structure based on a Eliseo Papa's [markdown-cv](https://github.com/elipapa/markdown-cv) jekyll workflow
@@ -82,12 +92,6 @@ Any css files put in the directory will be included, in alphabetical order, in a
 - [ ] add pdf metadata using exiftool?
 
 ## FAQ
-
-### Why did you put [a pdf with your resume](CV_Jacek_Krolikowski_en.pdf) in the root directory?
-
-It's the reason I created the project and I wanted to share the end result I was aiming for :)
-
-Also, I'm available for contract work! If you have a project you think I could help you with, get in touch via the email in the [resume](CV_Jacek_Krolikowski_en.pdf), I'd love to hear from you.
 
 ### Why is there a hidden `.Makefile` in the root directory?
 
