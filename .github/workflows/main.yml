@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: install required packages (the naive way)
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends curl jq pandoc lmodern wkhtmltopdf
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends curl jq pandoc lmodern wkhtmltopdf poppler-utils
         shell: bash
       - run: make test
       - run: make

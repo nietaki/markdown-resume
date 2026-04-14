@@ -6,7 +6,7 @@ jobs:
     name: test and compile
     steps:
       - uses: actions/checkout@v5
-      - run: sudo apt install -y pandoc lmodern wkhtmltopdf
+      - run: sudo apt install -y pandoc lmodern wkhtmltopdf poppler-utils
       - run: make test
       - run: make
       - uses: actions/upload-artifact@v4

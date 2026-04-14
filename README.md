@@ -51,7 +51,7 @@ While the docker container is running, the `src/` and the `output/` directories 
 
 Note: the watching for changes doesn't seem to be working on MacOS (at least when using Podman)
 
-## Simplest option
+### Simplest option
 
 In this version you don't compile the docker image - you use the `:latest`  pushed to [docker hub](https://hub.docker.com/repository/docker/nietaki/markdown-resume/tags/latest/)
 
@@ -60,6 +60,10 @@ It also doesn't do the filesystem watch thing - it just compiles all the source 
 ```bash
 make docker-simple
 ```
+
+## Hidden text
+
+Check the bottom of [`src/sample.md`](src/sample.md) for a hidden bonus feature 😉
 
 ## Credit
 

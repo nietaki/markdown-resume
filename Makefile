@@ -18,9 +18,10 @@ test:
 	shellcheck ./compile.sh
 	shellcheck ./compile_all.sh
 	shellcheck ./watch.sh
-	make
 	test -f ./output/sample.pdf || exit 1
 	test -f ./output/sample.html || exit 1
+	pdftotext ./output/sample.pdf - | grep "hidden text" || exit 1
+	pd
 	make clean
 	test ! -f ./output/sample.pdf || exit 1
 	test ! -f ./output/sample.html || exit 1
@@ -37,7 +38,7 @@ docker:
 
 .PHONY: docker-simple
 docker-simple:
-	docker run -it --entrypoint "./compile_all.sh" -v "./src:/mdr/src" -v "./output:/mdr/output" nietaki/markdown-resume:latest
+	docker run --pull "always" -it --entrypoint "./compile_all.sh" -v "./src:/mdr/src" -v "./output:/mdr/output" nietaki/markdown-resume:latest
 
 .PHONY: push-tag
 push-tag:

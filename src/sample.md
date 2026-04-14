@@ -86,3 +86,9 @@ Associate, _French Academy of Science_, Paris, France
 - Minted coins
 
 #### Lucasian professor of Mathematics, Cambridge University `1600`
+
+```hidden
+This is hidden text, that will still be recognised when the document is read by a machine, like with `pdftotext`
+
+This text can be multiline, but paragraphs won't be preserved
+```

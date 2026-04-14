@@ -290,6 +290,22 @@ font-weight: bolder;
 display: none;
 visibility: hidden;
 }
+pre.hidden {
+border: none;
+color: white;
+font-size: 1pt;
+line-height: 1pt;
+position: relative;
+left: 23%;
+margin-bottom: 0;
+margin-right: 0;
+width: 77%;
+clear: both;
+}
+pre.hidden code {
+border: none;
+color: #FEFEFE;
+}
 </style>
 </head>
 <body>
@@ -364,5 +380,8 @@ patent 001</p>
 </ul>
 <h4 id="lucasian-professor-of-mathematics-cambridge-university-1600">Lucasian
 professor of Mathematics, Cambridge University <code>1600</code></h4>
+<pre class="hidden"><code>This is hidden text, that will still be recognised when the document is read by a machine, like with `pdftotext`
+
+This text can be multiline, but paragraphs won&#39;t be preserved</code></pre>
 </body>
 </html>
